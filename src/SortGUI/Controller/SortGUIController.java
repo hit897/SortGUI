@@ -4,10 +4,21 @@ import SortGUI.View.SortFrame;
 
 public class SortGUIController
 {
-
+	/**
+	 * This is the Frame.
+	 */
 	private SortFrame appFrame;
+	/**
+	 * This is a whole number int array.
+	 */
 	private int [] wholeNumbers;
+	/**
+	 * This is a Double Array.
+	 */
 	private double [] realNumbers;
+	/**
+	 * This makes a String Array.
+	 */
 	private String [] wordage;
 	
 	public void start()
@@ -15,12 +26,18 @@ public class SortGUIController
 		fillTheArrays();
 	}
 	
+	/**
+	 * This calls the array fillers.
+	 */
 	private void fillTheArrays()
 	{
 		randomIntArray();
 		randomDoubleArray();
 	}
 	
+	/**
+	 * This sets random Values to the Int Array. 
+	 */
 	private void randomIntArray()
 	{
 		wholeNumbers = new int [20];
@@ -30,6 +47,9 @@ public class SortGUIController
 		}
 	}
 	
+	/**
+	 * This sets random Values to the Double Array.
+	 */
 	private void randomDoubleArray()
 	{
 		realNumbers = new double [20];
@@ -42,7 +62,9 @@ public class SortGUIController
 			}
 		}
 	}
-		
+	
+	
+	// GETTERS AND SETTERS
 	public SortFrame getAppFrame()
 	{
 		return appFrame;
