@@ -26,7 +26,26 @@ public class SortPanel
 		textPane = new JScrollPane(displayArea);
 		
 		setupPane();
+		setupPanel();
+		setupLayout();
+		setupListeners();
+	}
+
+	private void setupLayout()
+	{
 		
+		
+	}
+
+	private void setupPanel()
+	{
+		
+		
+	}
+
+	private void setupListeners()
+	{
+				
 	}
 
 	private void setupPane()
