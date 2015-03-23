@@ -49,7 +49,13 @@ public class SortGUIController
 		{
 			System.out.print(spot + ", ");
 		}
-		
+		System.out.println("");
+		sortDouble(realNumbers);
+		for(double spot : realNumbers)
+		{
+			System.out.print(spot + ", ");
+		}
+		System.out.println("");
 	}
 	
 	public SortGUIController()
@@ -145,56 +151,77 @@ public class SortGUIController
         intArr[j] = temp;
     }
      
-public void sortDouble(int[] inputArr) {
-        
-        if (inputArr == null || inputArr.length == 0) {
-            return;
-        }
-        this.wholeNumbers = inputArr;
-        int length = inputArr.length;
-        quickSortInt(0, length - 1, inputArr);
-    }
- 
-    private void quickSortDouble(int lowerIndex, int higherIndex, Double [] DoubleArr) {
-         
-        int i = lowerIndex;
-        int j = higherIndex;
-        // calculate pivot number, I am taking pivot as middle index number
-        Double pivot = DoubleArr[lowerIndex+(higherIndex-lowerIndex)/2];
-        // Divide into two arrays.
-        while (i <= j) {
-            /**
-             * In each iteration, we will identify a number from left side which
-             * is greater then the pivot value, and also we will identify a number
-             * from right side which is less then the pivot value. Once the search
-             * is done, then we exchange both numbers.
-             */
-            while (DoubleArr[i] < pivot) {
-                i++;
-            }
-            while (DoubleArr[j] > pivot) {
-                j--;
-            }
-            if (i <= j) {
-                exchangeNumbersDouble(i, j, DoubleArr);
-                //move index to next position on both sides
-                i++;
-                j--;
-            }
-        }
-        // call quickSort() method recursively
-        if (lowerIndex < j)
-            quickSortDouble(lowerIndex, j, DoubleArr);
-        if (i < higherIndex)
-            quickSortDouble(i, higherIndex, DoubleArr);
-    }
- 
-    private void exchangeNumbersDouble(int i, int j, Double [] DoubleArr) {
-        Double temp = DoubleArr[i];
-        DoubleArr[i] = DoubleArr[j];
-        DoubleArr[j] = temp;
-    }
-    
+	public void sortDouble(double[] realNumbers)
+	{
+
+		if (realNumbers == null || realNumbers.length == 0)
+		{
+			return;
+		}
+		this.realNumbers = realNumbers;
+		int length = realNumbers.length;
+		quickSortDouble(0, length - 1, realNumbers);
+	}
+
+	private void quickSortDouble(int lowerIndex, int higherIndex, double[] realNumbers)
+	{
+
+		int i = lowerIndex;
+		int j = higherIndex;
+		// calculate pivot number, I am taking pivot as middle index number
+		Double pivot = realNumbers[lowerIndex + (higherIndex - lowerIndex) / 2];
+		// Divide into two arrays.
+		while (i <= j)
+		{
+			/**
+			 * In each iteration, we will identify a number from left side which
+			 * is greater then the pivot value, and also we will identify a
+			 * number from right side which is less then the pivot value. Once
+			 * the search is done, then we exchange both numbers.
+			 */
+			while (realNumbers[i] < pivot)
+			{
+				i++;
+			}
+			while (realNumbers[j] > pivot)
+			{
+				j--;
+			}
+			if (i <= j)
+			{
+				exchangeNumbersDouble(i, j, realNumbers);
+				// move index to next position on both sides
+				i++;
+				j--;
+			}
+		}
+		// call quickSort() method recursively
+		if (lowerIndex < j)
+			quickSortDouble(lowerIndex, j, realNumbers);
+		if (i < higherIndex)
+			quickSortDouble(i, higherIndex, realNumbers);
+	}
+
+	private void exchangeNumbersDouble(int i, int j, double[] realNumbers)
+	{
+		Double temp = realNumbers[i];
+		realNumbers[i] = realNumbers[j];
+		realNumbers[j] = temp;
+	}
+	
+	public void sortString(int[] inputArr)
+	{
+
+		if (inputArr == null || inputArr.length == 0)
+		{
+			return;
+		}
+		this.wholeNumbers = inputArr;
+		int length = inputArr.length;
+		quickSortInt(0, length - 1, inputArr);
+	}
+
+	
 	// GETTERS AND SETTERS
 	public SortFrame getAppFrame()
 	{
