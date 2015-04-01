@@ -1,5 +1,7 @@
 package SortGUI.Model;
 
+import java.util.ArrayList;
+
 public class Sort
 {
 	
@@ -139,13 +141,48 @@ public class Sort
 			
 			sortTime = endTime - startTime;
 			
-			return toBeSorted;
 		}
 			
 		
 		return toBeSorted;
 	}
 	
+	public ArrayList<Integer> selectionSort(ArrayList<Integer> toBeSorted)
+	{
+		int minimum;
+		int minimumPosition;
+		startTime= System.currentTimeMillis();
+		for(int position = 0; position < toBeSorted.size(); position++)
+		{
+			minimumPosition = position;
+			minimum = toBeSorted.get(position);
+			for(int next = position +1; next < toBeSorted.size(); next++)
+			{
+				if(toBeSorted.get(next) < minimum)
+				{
+					minimum = toBeSorted.get(next);
+					minimumPosition = next;
+				}
+			}
+			if(minimumPosition != position)
+			{
+				swap(toBeSorted, position, minimumPosition);
+			}
+			endTime = System.currentTimeMillis();
+			
+			sortTime = endTime - startTime;
+			
+		}
+		return toBeSorted;
+	}
+	
+	private void swap(ArrayList<Integer> toBeSorted, int position, int change)
+	{
+		int temp = toBeSorted.get(position);
+		toBeSorted.set(position, toBeSorted.get(change));
+		toBeSorted.set(change, temp);
+	}
+
 	private void swap(int[] array, int position, int change)
 	{
 		int temp = array[position];
